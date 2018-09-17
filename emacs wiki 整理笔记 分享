@@ -1,0 +1,23 @@
+emacs wiki 整理笔记 分享
+
+使用Emacs-wiki 来做笔记
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[web][http://www.caole.net/diary/org_mode.html]
+;;Yu Peng的Emacs的Org Mode
+;;Emacs org Mode的官方参考文档
+;;
+;;转载请注明来自曹乐的个人主页
+;;
+Emacs org mode 学习笔记
+以前一直都用Emacs Wiki Mode记笔记,但wiki mode总有些奇奇怪怪的bug,并且已经不更新了,最近org mode 非常火爆,禁不住想试一下。 对于记笔记,我的打算很简单
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Emacs org mode学习笔记
+
+Emacs Org Mode真的非常好用，配合Dropbox可以实现笔记在多台电脑上的同步。 我现在用org mode来记录笔记，管理个人事务。这个网站就被我用org mode重新弄了一下。终于可以完全抛弃bug满天飞的emacs-wiki了。同时，org mode还取代了我一直用的remember, muse, planner.
+;;
+;;
