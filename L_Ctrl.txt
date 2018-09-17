@@ -1,0 +1,6 @@
+﻿
+L_Ctrl::
+if GetKeyState("L_Ctrl", "P")
+Click
+Return
+

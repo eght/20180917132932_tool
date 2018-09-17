@@ -1,0 +1,11 @@
+﻿
+L_Ctrl::
+if GetKeyState("L_Ctrl", "P")
+Click
+Return
+;;;;;;;;;;;;;;;;;;;;;;;;;
+Send, {LButton down}
+Return
+Send, {LButton up}
+Return
+

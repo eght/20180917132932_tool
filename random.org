@@ -1,0 +1,77 @@
+[web][http://ergoemacs.org/emacs/elisp_generate_uuid.html]
+
+;;;;
+;; elisp source code
+;; effects: 
+;; some examples of UUID:
+;;
+;; 0a1cd3bc-96fa-71d1-4338-27092ca4cfa5
+;; 1e27a053-60a4-af61-f38d-9f1f123740d6
+;; 115024d2-7c74-326e-c9ec-064f42d08b31
+;; 070f1f0b-2454-3ffa-4aa2-d6e0652d03fe
+;; manual:
+;; Elisp's random function can be called in 3 ways:
+;;
+;;    (random t). Set a random seed based on current time and PID (process ID).
+;;   (random n). Returns a random number between 0 and n-1, including possible 0 and n-1.
+;;    (random). Returns a random number between 0 and 2^29-1, inclusive.
+;;
+;;;;;;;;;;;;;;;;;;;;;;
+(random t)
+
+(defun insert-random-uuid ()
+  "Insert a random UUID.
+Example of a UUID: 1df63142-a513-c850-31a3-535fc3520c3d
+
+WARNING: this is a simple implementation. The chance of generating the same UUID is much higher than a robust algorithm.."
+  (interactive)
+  (insert
+   (format "%04x%04x-%04x-%04x-%04x-%06x%06x"
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 6))
+           (random (expt 16 6)) ) ) )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; version 2
+;; web: https://nullprogram.com/
+;; related person: Christopher Wellons.
+;; usage: It uses several random elements from emacs, 
+;;        then Alt+x md5 to generate the UUID.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun xah-insert-random-uuid ()
+  "Insert a UUID. This uses a simple hashing of variable data.
+Example of a UUID: 1df63142-a513-c850-31a3-535fc3520c3d
+
+Note: this code uses https://en.wikipedia.org/wiki/Md5 , which is not cryptographically safe. I'm not sure what's the implication of its use here.
+
+Version 2015-01-30
+URL `http://ergoemacs.org/emacs/elisp_generate_uuid.html'
+"
+;; by Christopher Wellons, 2011-11-18. Editted by Xah Lee.
+;; Edited by Hideki Saito further to generate all valid variants for "N" in xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx format.
+  (interactive)
+  (let ((myStr (md5 (format "%s%s%s%s%s%s%s%s%s%s"
+                            (user-uid)
+                            (emacs-pid)
+                            (system-name)
+                            (user-full-name)
+                            (current-time)
+                            (emacs-uptime)
+                            (garbage-collect)
+                            (buffer-string)
+                            (random)
+                            (recent-keys)))))
+
+    (insert (format "%s-%s-4%s-%s%s-%s"
+                    (substring myStr 0 8)
+                    (substring myStr 8 12)
+                    (substring myStr 13 16)
+                    (format "%x" (+ 8 (random 4)))
+                    (substring myStr 17 20)
+                    (substring myStr 20 32)))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
