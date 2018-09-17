@@ -1,0 +1,72 @@
+ [web][https://www.cnblogs.com/dsli/p/7537988.html]
+ 在Windows系统使用Gpg4win进行加密解密
+
+GPG，又称为GnuPG，全称是Gnu Private Guard，即GNU隐私卫士。GPG是以PGP算法为核心的强大的加密软件。但GPG项目是一套命令行程序，而且是为 Linux 等开源操作系统设计的。那么在Windows平台下如何使用GPG呢？不用担心，Gpg4win就是Windows平台GPG及图形前端的集合安装包。
+
+简单介绍一下，Gpg4win是一款非对称加密方式软件。简单来讲，就是用公钥加密文件，用私钥解密文件。如果你需要发送加密信息，首先获取接收者的公钥，然后利用该公钥加密后传递，对方利用对应的私钥就可解密。也就是说，公钥是锁，私钥是钥匙。非对称加密方式很好地解决了传递机密信息的问题。
+
+ 
+下载安装Gpg4win
+
+请到官方网站下载：http://www.gpg4win.org/
+之后运行安装程序，保持默认设置即可。安装完成后会要求设置信任的根证书，勾选下方的Root certificate defined or skip configuration（根证书已定义或跳过设置）即可。
+
+ 
+创建密钥对
+
+    运行Kleopatra，点击File – New Certificate，会弹出Certificate Creation Wizard（证书创建向导）
+    选择第一项 Create a personal OpenPGP key pair。
+    填入Name（姓名）、Email（电子邮箱地址）和Comment（附加信息）。
+    点击Advanced Settings，可以进行高级设置，为了增强安全性，建议选择最长的4096 bits，其余维持默认设置即可。
+    点击Create Key，之后输入Passphrase，点击OK。请牢记Passphrase，因为在使用自己的私钥时需要输入Passphrase。
+    在创建的过程中，可以在下图所示的文本框中随意打字或者移动这一窗口，计算机将利用IO生成随机数。
+    gpg4win_00
+    创建完成后，下方有三个选项是：备份密钥对、通过Email发送公钥、将公钥上传到服务器。如果不需要执行上述操作，点击Finish即可。
+
+ 
+
+ 
+导入导出秘钥
+
+公钥加密，私钥解密。如果想要别人给你发送加密信息，别人就要知道你的公钥才行。公钥之所以称为公钥，就是因为它是公开的。接下来，我们需要把自己的公钥公之于众，上传到专门的服务器上。这里以上传到MIT的PGP公钥服务器为例。
+
+    在Kleopatra主界面右键点击要导出的秘钥，点击Export Certificates，输入保存路径和文件名，点击保存后会得到一个asc文件。
+    gpg4win_01
+    使用文本编辑器打开刚才生成的asc文件，复制全部内容。
+    使用浏览器访问MIT的PGP公钥服务器http://pgp.mit.edu/，将刚才复制的内容黏贴到“Submit a key”下方的文本框里，点击Submit this key to the key server!。上传成功后，别人搜索你的邮箱即可获取你的公钥。
+
+反过来，如果你想给别人发送加密信息，就需要获取他的公钥。假如我想发送给neo.q.zhang@gmail.com，则需要通过以下步骤获取相应的公钥。
+
+    使用浏览器访问MIT的PGP公钥服务器http://pgp.mit.edu/，在“Extract a key”下方的文本框输入neo.q.zhang@gmail.com，如下图所示。之后点击Do the search!。
+    gpg4win_02
+    在搜索结果页中点击相应的keyID，会进入一个有一长串乱码的页面。复制该页面的全部内容。
+    打开文本编辑器，黏贴刚才复制的内容，保存。文件名随意，例如“neo.asc”。
+    在Kleopatra主界面点击Import Certificates，选择刚才保存的文件，点击打开。这样就成功导入了一个公钥。
+
+ 
+加密文本
+
+下面的例子将演示如何加密一段文本并通过邮件发送给别人。
+
+    打开文本编辑器，输入你想要加密的文本（即原文），保存。文件名随意，例如“send.txt”。
+    在Kleopatra主界面点击 File – Sign/Encrypt Files，选择刚才保存的文件。
+    之后弹出的窗口中间有3的选项，分别是签名并加密（Sign and Encrypt (OpenPGP only)）、加密（Encrypt）、签名（Sign）。这里我们选择默认选项——加密（Encrypt）。
+    因为我们要通过邮件发送纯文本，勾选Text output(ASCII armor)。点击Next。
+    gpg4win_03
+    之后从上方的列表中选择接受方的公钥（前提是你已经导入了接收方的公钥），点击Add添加到下方列表。点击Ecrypt开始生成密文。
+    密文生成后，点击Finish。
+    在和原文同一路径下找到刚生成的密文“send.txt.asc”。用文本编辑器打开，复制全部内容。
+    将刚才复制的密文发送给接收方，就像平时发邮件一样。
+    gpg4win_04
+
+ 
+解密文本
+
+下面的例子将演示如何解密一封收到的密文。
+
+    复制收到的密文。打开文本编辑器，粘贴，保存。文件名随意，例如“receive.txt”。
+    在Kleopatra主界面点击 File – Decrypt/Verify Files，选择刚才保存的文件。
+    选择输出的路径，默认是和密文同一路径，点击Decrypt/Verify。
+    之后会要求你输入passphrase，就是我们在创建密钥时输入的那个。点击确定。
+    解密完成后，点击OK。
+    在输出路径找到解密后的文件“receive.txt.out”，用文本编辑器打开即可看到原文。

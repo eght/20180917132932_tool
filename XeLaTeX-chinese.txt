@@ -1,0 +1,129 @@
+作者：haoshu zhao
+链接：https://www.zhihu.com/question/29666942/answer/45186075
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+\documentclass[mathserif,notheorems]{beamer}
+
+\usepackage[slantfont,boldfont]{xeCJK}
+\usepackage{fontspec}
+\setCJKmainfont{SimSun}
+\setmainfont{SimSun}
+\setsansfont{SimSun}
+\setmonofont{WenQuanYi Zen Hei Mono}
+
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{color,xcolor}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{subfigure}
+\usepackage{amsthm}
+
+%\usetheme{Warsaw}
+\usetheme{Madrid}
+\usecolortheme{whale}
+
+%%-------------------------------------------------------------------------------------------------
+
+
+
+%\newtheorem{proposition}{Proposition}
+\newtheorem{proposition}{命题}
+\newtheorem{theorem}{定理}
+\newtheorem{definition}{定义}
+\newtheorem{example}{例}
+
+\renewcommand\figurename{图}
+\renewcommand\tablename{表}
+
+\setbeamertemplate{theorems}[numbered]
+
+
+\begin{document}
+
+\title[ss]{ss}
+\author[ss]{马}
+\institute[math] {数学系}
+\date[April, 2014]{2014~年~4~月}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{问题背景}
+sss
+\end{frame}
+
+\end{document}
+
+
+
+作者：知乎用户
+链接：https://www.zhihu.com/question/29666942/answer/45179926
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+\documentclass[UTF8]{ctexbeamer}
+% for old TeX systems, please use the following alternate
+% \documentclass[notheorems]{beamer}
+% \usepackage[UTF8]{ctex}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{color,xcolor}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{amsthm}
+
+\usetheme{Madrid}
+\usefonttheme[onlymath]{serif}
+\usecolortheme{whale}
+
+\newtheorem{proposition}[theorem]{命题}
+\setbeamertemplate{theorems}[numbered]
+\begin{document}
+
+\title[ss]{ss}
+\author[ss]{马}
+\institute[math] {数学系}
+\date[April, 2014]{2014 年 4月}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{图表}
+\begin{columns}
+\begin{column}{0.5\linewidth}
+\begin{figure}
+\centering
+\rule{4cm}{3cm}
+\caption{Dummy Figure}\label{fig:dummy}
+\end{figure}
+\end{column}
+\begin{column}{0.5\linewidth}
+\begin{table}
+\centering
+\caption{Dummy Table}\label{tab:dummy}
+\rule{4cm}{3cm}
+\end{table}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{定理等}
+\begin{theorem}
+    这是定理。
+\end{theorem}
+\begin{definition}
+    这是定义。
+\end{definition}
+\begin{lemma}
+    这是引理。
+\end{lemma}
+\begin{example}
+    这是例子。
+\end{example}
+\begin{proposition}
+    这是命题。
+\end{proposition}
+\end{frame}
+\end{document}

@@ -1,0 +1,124 @@
+[web][]
+Windows 下GitHub 安装和使用
+
+一、官网注册和设置
+
+1.登录官网，注册账号，其中用户名以后会用到。
+
+2.创建仓库。使用公开仓库方式创建，公开仓库免费。（右上角-》加号-》new repository）
+
+第一行：仓库名字。
+
+第二行：对仓库的描述。
+
+第三行：选择public 公开仓库
+
+第五行：创建一个readme文件，介绍项目功能。
+
+第六行：add gitignore 项目什么语言
+
+3.创建成功之后，点击readme.md来编译这个文件。
+
+二、在windows下安装GIT
+
+下载完成之后，安装即可，一路next。
+
+三、配置GIT
+
+1.打开刚才安装的git bash。出现以下界面。
+
+2.配置git
+
+第一步：输入ssh-keygen –t rsa –C “邮箱地址”。（注意ssh-keygen之间是没有空格的,其他的之间是有空格的）
+
+第二步：回车之后，要求输入一个保存密钥的路径，括号中的是默认位置。建议直接回车，使用默认路径。
+
+第三步：要求设置密码，直接回车两次，就可以生成密钥了。（刚才的默认路径下会生成两个文件：id_rsa和id_rsa.pub。id_rsa.pub中的全部内容就是密钥）
+
+第四步：转到github官网上配置ssh key.
+
+1、点击 左边的edit profiles
+
+2、点击 ssh and gpg keys
+
+3、 点击右上角的new ssh key
+
+其中名字随便取。key就是刚才id_rsa.pub中的全部内容。
+
+4、验证一下是否设置成功,在git bash下输入如下命令：ssh –T git@github.com
+
+ 第一次，会让你输入yes或no,这时输入yes就可以了，其它显示和下图这个是一样的。
+
+如果出现不是这些内容，有可能是显示权限问题什么的，就应该是我上面提到的那种情况，你看一下你生成密钥时是否操作正确，目录下是否有那个known_hosts这个文件。
+
+5.配置一下用户名和邮箱：
+
+git config –global user.name  “用户名”
+
+git config –global user.email  “邮箱”
+
+ 
+
+四、托管项目
+
+(一)新建仓库
+
+1.首先在F盘下新建一个文件夹，即新建一个仓库。名字为Test
+
+2.打开git bash.这时默认的路径是之前安装时的默认路径。所以首先进入该目录 。执行命令cd F:\Test
+
+3.通过命令 git init 把这个目录变成git可以管理的仓库，如下：
+
+Test 目录下会多了一个.git的目录，这个目录是Git来跟踪管理版本的，没事千万不要手动乱改这个目录里面的文件，否则，会把git仓库给破坏了.
+
+（二）将文件添加到版本库
+
+1.在该仓库下建立想要上传的文件夹 EEDM,该文件夹中有一个文件1.txt
+
+2.右击文件夹EEDM->选择“git bash”->执行命令 ：git remote add origin git@github.com:LYRCODING/EEDM.git  
+
+(其中LYRCODING是github注册时的用户名 ，EEDM是在github上的仓库名 )
+
+3。如果之前提交过文件，需要先在本地同步一下仓库的内容，命令如下：git pull git@github.com:LYRCODING/EEDM.git  
+
+执行的效果如下：并且本地目录下会多出原本在github上的文件
+
+4.下面把本地的文件上传到仓库上。
+
+增加命令：
+
+git add .     (add后面加了一个点，是想要提交所有文件，如果想提交指定的文件，可以写文件名)
+
+提交命令：
+
+git commit –m “版本2”   (-m后面跟提示信息，这个提示信息是一定要写的，记录我们提交的过程，写清晰为什么提交或修改了什么是非常有用的.)
+
+推送命令：
+
+git push git@github.com:LYRCODING/EEDM.git  
+
+这样就完成了。在web中查看，项目已经上传。
+
+ （三）其他命令
+
+1.查看所有版本的版本号
+
+$ git reflog
+
+ 
+
+2.使本地项目恢复成某一历史版本
+
+git resrt --hard 版本号。（在查看本地的项目已经恢复成了历史版本）
+
+ 
+
+3.查看历史改变信息
+
+$ git log --pretty=oneline
+
+ 
+
+参考:http://www.open-open.com/lib/view/open1423810370232.html
+
+http://blog.csdn.net/free_wind22/article/details/50967723  重要命令

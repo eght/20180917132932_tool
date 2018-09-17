@@ -1,0 +1,54 @@
+[web][https://jingyan.baidu.com/album/ad310e80d546ee1849f49efc.html?picindex=1]
+Windows7英文转中文听语音
+
+    浏览：1083
+    
+    更新：2017-02-09 18:10
+
+分步阅读
+
+网友误装了Windows7英文专业版，想要将显示界面改成简体中文的。
+方法/步骤
+
+    1
+
+    开始按钮→Control Panel（控制面板）
+    Windows7英文转中文
+    2
+
+    Control Panel（控制面板）→Windows Update（更新服务）
+    Windows7英文转中文
+    3
+
+    保持联网，点击Check for updates
+    Windows7英文转中文
+
+    系统会自动连接到微软官网，检测Windows7操作系统所需相关更新补丁。
+    Windows7英文转中文
+
+    稍后，系统检测到一共有187个安全补丁和39个可选补丁。
+    Windows7英文转中文
+
+    先点击187安全补丁，进去去除全选（等以后有时间再更新这些补丁，否则更新的时间太长，起码需要数小时）
+    Windows7英文转中文
+    再找到可选的39个补丁中，找到中文简体语言包：Chinese（Simplified）Language Pack（简体中文语言包）并勾选→下载。
+    Windows7英文转中文
+
+    返回此界面，已经选中一个中文语言包（166.5MB大小）→Install updates
+    Windows7英文转中文
+
+    耐心等待下载语言包
+    Windows7英文转中文
+
+    下载完毕（绿色对勾）
+    Windows7英文转中文
+
+    Control Panel（控制面板）→Region and Language
+    Windows7英文转中文
+
+    将所有的相关设置，都改成中文有关。
+
+    Region and Language→Keyboards and Language→Choose a display Language→选择中文（简体）
+    Windows7英文转中文
+
+    重启计算机即可生效。
