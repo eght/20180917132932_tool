@@ -1,0 +1,2 @@
+﻿https://www.psi.toronto.edu/matrix/intro.html#Intro
+向量，计算期望，方差
