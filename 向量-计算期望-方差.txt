@@ -6,3 +6,9 @@ https://www.bookshare.org/browse/book/1887865
 http://cseweb.ucsd.edu/~gill/CILASite/Resources/BooksMarcus.pdf
 
 http://store.doverpublications.com/0486411796.html
+
+1. matrix analysis, R. A. Horn and C. R. Johnson
+2. 矩阵分析与应用，清华大学，张贤达，
+3. Matrix Computations, 3e， 约翰霍普金斯大学出版，
+4. Matrix Computation, Gene Howard Golub and Charles F. van Loan, 特别是Gene计算数学界的大牛，是那种牛的不能再牛的大牛，其中他最著名
+的成果是关于矩阵奇异值分解的计算算法，就是他提供的简单的，稳定的算法影响了整个计算数学的进展，
