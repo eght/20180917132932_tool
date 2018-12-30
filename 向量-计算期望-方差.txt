@@ -12,3 +12,5 @@ http://store.doverpublications.com/0486411796.html
 3. Matrix Computations, 3e， 约翰霍普金斯大学出版，
 4. Matrix Computation, Gene Howard Golub and Charles F. van Loan, 特别是Gene计算数学界的大牛，是那种牛的不能再牛的大牛，其中他最著名
 的成果是关于矩阵奇异值分解的计算算法，就是他提供的简单的，稳定的算法影响了整个计算数学的进展，
+
+read book, library.
