@@ -1,3 +1,4 @@
 ex-1. vim dos/unix互转
-solution: 使用vim命令 :set ff=unix
-
+sol-1: 使用vim命令 :set ff=unix
+sol-2: :set fileformat=unix 
+effect: 这个文件就以 Unix 格式存盘了。
