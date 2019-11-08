@@ -1,0 +1,1 @@
+﻿F:\git\secret\y\ye\yee\emacs-25.2-x86_64\bin\runemacs.exe -q -l ~\emacs.d\_emacs
