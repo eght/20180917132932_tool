@@ -1,0 +1,9 @@
+http://home.thep.lu.se/~karlf/
+Employed at Inmeta in Oslo, Norway, as data scientist in the machine learning group.
+Karl Fogelmark
+Emacs
+"Show me your ~/.emacs and I will tell you who you are."
+
+–Bogdan Maryniuk
+
+My collected emacs wisdom is available here.
