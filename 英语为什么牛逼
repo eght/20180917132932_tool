@@ -109,3 +109,24 @@ English
 #
 sofiathefirst python 给小学生出数学题目
 #
+[https://blog.csdn.net/zhuying_linux/article/details/7004756]
+
+windows内部命令之prompt
+原创 紫颖 发布于2011-11-23 16:36:37 阅读数 5576 收藏
+展开
+
+经常出现在命令窗口中不能运行命令的事情。甚是让人头疼。
+
+在“运行”中输入“cmd”，进入命令窗口，运行“ipconfig”，“ping”，“route print”等，全不能运行。而在窗口中输入“%systemRoot%\system32\ipconfig”，却能正常运行。从而判断应该是系统变量中路径没了。在窗口中使用命令“set path=c:\windows;c:\windows\system32;c:\windows\system32\wbem”。然后在prompt下运行“ipconfig”,一切ok. 
+
+重新启动系统，发现故障依旧。进入“我的电脑”- >“属性”->“高级”->“环境变量”，选择系统变量，找到path，进入“编辑”。将其值设为“c:\windows;c:\windows\system32;c:\windows\system32\wbem”。这次就能彻底解决问题了。
+
+
+很多场合下，我们还是需要用到命令提示符的功能，使用的方法也很简单，从开始菜单的“程序→附件”下选择“命令提示符”即可进入，或者直接在运行对话框中键入“cmd”也可以，两者的区域是前者会在窗口标题栏中显示“命令提示符”的字样，而后者显示的则是“C:\WINDOWS\system32\cmd.exe”。
+
+1. 为每个命令加个时间，很有用，可以让你方便的看到上个命令的运行结束时间
+prompt [$T]$_$P$G
+
+2. 加多点吧，加上日期
+prompt [$D $T]$_$P$G
+#
