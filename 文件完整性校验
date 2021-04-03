@@ -1,2 +1,12 @@
 Q: 文件完整性校验
 A: MD5、SHA1、SHA256等校验算法
+A: Win10环境就自带了这样的生成器，下面的命令就可以完成：
+CertUtil -hashfile <path to file> MD5
+eg：
+======================================
+C:\tmp>certutil -hashfile file.tar MD5
+======================================
+MD5 hash of file.tar:
+4ed484f0fb13684c0a7e3e855148a780
+CertUtil: -hashfile command completed successfully.
+===================================================
