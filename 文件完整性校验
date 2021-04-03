@@ -10,3 +10,25 @@ MD5 hash of file.tar:
 4ed484f0fb13684c0a7e3e855148a780
 CertUtil: -hashfile command completed successfully.
 ===================================================
+====
+====
+===================================================
+Q: WSL ubuntu 校验MD5值
+==========================
+# cat /etc/os-release
+Ubuntu 16.04.3 LTS
+
+# touch file1 file2
+# md5sum file1 file2
+d41d8cd98f00b204e9800998ecf8427e  file1
+d41d8cd98f00b204e9800998ecf8427e  file2
+# md5sum file1 file2 > md5.txt
+~# md5sum -c md5.txt
+file1: OK
+file2: OK
+# echo "hello" >> file1
+~# md5sum -c md5.txt
+file1: FAILED
+file2: OK
+md5sum: WARNING: 1 computed checksum did NOT match
+===================================================
